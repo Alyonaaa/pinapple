@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.pinapple_.screens.main.MainFragment"
+        android:label="Days"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.example.pinapple_.screens.tasks.TasksFragment"
+        android:label="Tasks"
+        tools:layout="@layout/fragment_tasks">
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_tasksFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.example.pinapple_.screens.addtask.AddTaskFragment"
+        android:label="Add Task"
+        tools:layout="@layout/fragment_add_task">
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
+</navigation>
